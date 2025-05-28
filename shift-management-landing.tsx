@@ -67,10 +67,11 @@ export default function Component() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0A0831] relative overflow-hidden">
       <header className="flex items-center justify-between p-6">
         <div className="flex items-center">
           <Image src="/logo.svg" alt="Logo" width={42} height={42} />
+          <h1 className="text-4xl font-bold text-[#fff]">SHFT</h1>
         </div>
       </header>
 
@@ -94,7 +95,7 @@ export default function Component() {
         />
       </div>
 
-      <div className="absolute bottom-60 md:left-1/2 left-1/7 w-16 h-16 rounded-full flex items-center justify-center">
+      <div className="absolute top-20 right-100 md:left-1/2 left-1/7 w-16 h-16 rounded-full flex items-center justify-center">
         <Image
           src="/memoji5.png"
           alt="Logo"
@@ -104,12 +105,12 @@ export default function Component() {
         />
       </div>
 
-      <div className="absolute bottom-32 right-24 w-16 h-16  md:flex hidden rounded-full items-center justify-center">
+      <div className="absolute bottom-32 right-1/4 w-16 h-16  md:flex hidden rounded-full items-center justify-center">
         <Image
           src="/memoji4.png"
           alt="Logo"
-          width={60}
-          height={60}
+          width={84}
+          height={84}
           className="rounded-md"
         />
       </div>
@@ -118,8 +119,8 @@ export default function Component() {
         <Image
           src="/memoji3.png"
           alt="Logo"
-          width={104}
-          height={104}
+          width={120}
+          height={120}
           className="rounded-md w-34 h-34"
         />
       </div>
@@ -132,7 +133,7 @@ export default function Component() {
             animate="visible"
             variants={fadeVariants}
           >
-            <h1 className="text-4xl font-bold text-[#2A2A2A] leading-tight mb-8">
+            <h1 className="text-4xl font-bold text-[#fff] leading-tight mb-8">
               Manage and assign shift to employees within your company.
             </h1>
 
@@ -150,10 +151,10 @@ export default function Component() {
                     <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#2A2A2A] mb-2">
+                    <h3 className="text-xl font-semibold text-[#fff] mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-[#595959] leading-relaxed">
+                    <p className="text-[#fff] leading-relaxed">
                       {feature.subTitle}
                     </p>
                   </div>
@@ -169,7 +170,7 @@ export default function Component() {
             variants={fadeVariants}
           >
             <motion.div
-              className="bg-white rounded-3xl p-8 shadow-lg max-w-md mx-auto min-h-[360px] flex flex-col items-center justify-center"
+              className="rounded-3xl p-8 shadow-lg max-w-md mx-auto min-h-[360px] flex flex-col items-center justify-center"
               variants={fadeVariants}
             >
               <AnimatePresence>
@@ -182,7 +183,7 @@ export default function Component() {
                     transition={{ duration: 0.3 }}
                   >
                     <Check className="text-green-500 w-10 h-10 mx-auto" />
-                    <h2 className="text-2xl font-bold text-[#2A2A2A]">
+                    <h2 className="text-2xl font-bold text-[#fff]">
                       You're now on our waitlist!
                     </h2>
                     <p className="text-gray-600">
@@ -197,10 +198,10 @@ export default function Component() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <h2 className="text-3xl font-bold text-[#2A2A2A] mb-4 text-center">
+                    <h2 className="text-3xl font-bold text-[#fff] mb-4 text-center">
                       Join our journey and get early access
                     </h2>
-                    <p className="text-gray-600 text-center mb-8 leading-relaxed">
+                    <p className="text-[#fff] text-center mb-8 leading-relaxed">
                       Something big is coming — built for companies like yours.
                       Join the waitlist for early access
                     </p>
@@ -215,8 +216,8 @@ export default function Component() {
                           className={`w-full px-4 py-7 border ${
                             errors.companyName
                               ? "border-red-500"
-                              : "border-gray-300"
-                          } rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-[#AEAEAE] focus:border-[#2A2A2A]`}
+                              : "border-[#fff]"
+                          } rounded-full focus:outline-none bg-transparent focus:ring-2 focus:ring-purple-500 placeholder:text-[#E1E1E1] focus:border-[#fff]`}
                         />
                         {errors.companyName && (
                           <motion.p
@@ -238,8 +239,8 @@ export default function Component() {
                           className={`w-full px-4 py-7 border ${
                             errors.companyEmail
                               ? "border-red-500"
-                              : "border-gray-300"
-                          } rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-[#AEAEAE] focus:border-[#2A2A2A]`}
+                              : "border-[#fff]"
+                          } rounded-full focus:outline-none bg-transparent focus:ring-2 focus:ring-purple-500 placeholder:text-[#E1E1E1] focus:border-[#fff]`}
                         />
                         {errors.companyEmail && (
                           <motion.p
@@ -259,11 +260,14 @@ export default function Component() {
                         <Button
                           onClick={handleSubmit}
                           disabled={isLoading}
-                          className="w-full bg-[#2A2A2A] hover:bg-gray-800 text-white py-7 px-6 rounded-full font-semibold flex items-center justify-center gap-2 transition-colors"
+                          className="w-full bg-[#fff] hover:bg-gray-[#E1E1E1] text-white py-7 px-6 rounded-full font-semibold flex items-center justify-center gap-2 transition-colors"
                         >
                           {!isLoading ? (
                             <>
-                              Join Waitlist
+                              <h2 className="text-[#2a2a2a] text-center">
+                                Join Waitlist
+                              </h2>
+
                               <ArrowRight className="w-4 h-4" />
                             </>
                           ) : (
